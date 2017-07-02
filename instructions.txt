@@ -1,0 +1,35 @@
+to see if you already have the interface, type in,
+# ifconfig
+in the terminal for me it gives,
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.42  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::1e83:41ff:fe0e:424e  prefixlen 64  scopeid 0x20<link>
+        ether 1c:83:41:0e:42:4e  txqueuelen 1000  (Ethernet)
+        RX packets 2621  bytes 1504096 (1.4 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2893  bytes 604711 (590.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 1842  bytes 1128787 (1.0 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1842  bytes 1128787 (1.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.27  netmask 255.255.255.0  broadcast 192.168.1.255
+        ether 6a:7a:4c:8c:fc:f9  txqueuelen 1000  (Ethernet)
+        RX packets 1801  bytes 1981428 (1.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 890  bytes 213076 (208.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+At the bottom it says wlan0, wich is why i put that in the script, and eth0 for ethernet wich is also why i put that in the script,
+lo doesn't matter but you need to take what is at the top of the ifconfig command and replace eth0 with that, same with wlan0, I
+already put wlp2s0 so no worries if it says that, but after you have done that, your good to go, say if it said wlan1 at the bottom,
+I would change every wlan0 to wlan1, same with eth0, and that's it, enjoy never having the same mac address, as long as you read
+then README.md file, that's all for now, have a codefull day ;)
