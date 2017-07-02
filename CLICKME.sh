@@ -1,25 +1,28 @@
 # macchanger-bash-script
 #!/bin/bash
 
-sudo apt install macchanger
-mv CLICKME.sh macchanger.sh
-if [[ wlan0=up ]]
+if mv CLICKME.sh macchanger.sh
 then
-        sudo ifconfig wlan0 down
-        sudo macchanger wlan0 -r
-        sudo ifconfig wlan0 up
-elif [[ eth0=up ]]
-then
-        sudo ifconfig eth0 down
-        sudo macchanger eth0 -r
-        sudo ifconfig eth0 up
-elif [[ wlp2s0=up ]]
-then
-        sudo ifconfig wlp2s0 down
-        sudo macchanger wlp2s0 -r
-        sudo ifconfig wlp2s0 up
-fi
+        sudo apt install macchanger
+else
+	if [[ wlan0=up ]]
+	then
+        	sudo ifconfig wlan0 down
+        	sudo macchanger wlan0 -r
+		sudo ifconfig wlan0 up
+	elif [[ eth0=up ]]
+	then
+        	sudo ifconfig eth0 down
+        	sudo macchanger eth0 -r
+        	sudo ifconfig eth0 up
+	elif [[ wlp2s0=up ]]
+	then
+        	sudo ifconfig wlp2s0 down
+        	sudo macchanger wlp2s0 -r
+        	sudo ifconfig wlp2s0 up
+	fi
 
+fi
 
 exit
 
